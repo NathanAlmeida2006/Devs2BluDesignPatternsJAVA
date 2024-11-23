@@ -1,4 +1,4 @@
-package com.senac.designpatterns.memento.component;
+package com.senac.designpatterns.memento.questao01.component;
 
 public class TextEditor {
     private String text;
@@ -11,17 +11,14 @@ public class TextEditor {
         return text;
     }
 
-    // Cria um memento para salvar o estado atual
     public Memento saveToMemento() {
         return new Memento(text);
     }
 
-    // Restaura o estado a partir de um memento
     public void restoreFromMemento(Memento memento) {
         text = memento.getState();
     }
 
-    // Classe interna Memento que armazena o estado
     public static class Memento {
         private final String text;
 
